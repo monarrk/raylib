@@ -67,9 +67,10 @@ void _glfwInitTimerPOSIX(void)
 
 
 // Added by skye (@monarrk) for netbsd support
+#if defined(__NetBSD__)
 int     gettimeofday(struct timeval * __restrict, void *__restrict)
 	    __RENAME(__gettimeofday50);
-
+#endif
 
 uint64_t _glfwPlatformGetTimerValue(void)
 {
